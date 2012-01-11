@@ -7,7 +7,7 @@ development:
   adapter: mysql
   database: agile_meetings_new_dev
   username: root
-  password: karan
+  password: 
   pool: 5
   timeout: 5000
 
@@ -18,7 +18,7 @@ test:
   adapter: mysql
   database: agile_meetings_new_test
   username: root
-  password: karan
+  password: 
   pool: 5
   timeout: 5000
 

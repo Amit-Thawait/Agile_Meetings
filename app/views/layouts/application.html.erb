@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AgileMeetings</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body style="background: #EEEEEE">
+  <head>
+    <title>Ruby Sync Up</title>
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <!DOCTYPE HTML>
+  <div id="main">
+    <%= render :partial=>'layouts/header' %>
+    <div id="site_content">
+      <div id="user_nav">
+      </div>
 
-<%= yield %>
-
+      <div id="content">
+        <!-- insert the page content here -->
+        <p class="notice"><%= notice %></p>
+        <p class="alert" ><%=alert %></p>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render :partial=>'layouts/footer' %>
+  </div>
+  <div style="text-align: center; font-size: 0.75em;">Design downloaded from <a href="#">Website Templates</a>.</div>
 </body>
 </html>
