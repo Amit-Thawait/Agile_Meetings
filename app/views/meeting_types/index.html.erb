@@ -8,14 +8,14 @@
     <th></th>
   </tr>
 
-<% @meeting_types.each do |meeting_type| %>
-  <tr>
-    <td><%= meeting_type.name %></td>
-    <td><%= link_to 'Show', meeting_type %></td>
-    <td><%= link_to 'Edit', edit_meeting_type_path(meeting_type) %></td>
-    <td><%= link_to 'Destroy', meeting_type, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @meeting_types.each do |meeting_type| %>
+    <tr>
+      <td><%= meeting_type.name %></td>
+      <td><%= link_to 'Show', meeting_type %></td>
+      <td><%= link_to 'Edit', edit_meeting_type_path(meeting_type) %></td>
+      <td><%= link_to 'Destroy', meeting_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />

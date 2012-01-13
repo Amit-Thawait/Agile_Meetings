@@ -3,4 +3,8 @@ class Attendee < ActiveRecord::Base
   
   validates :email, :presence => true
   validates :email, :uniqueness => true
+
+  def self.get_all_attendees
+    find(:all)
+  end
 end

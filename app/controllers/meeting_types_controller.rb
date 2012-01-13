@@ -80,4 +80,31 @@ class MeetingTypesController < ApplicationController
       format.json { head :ok }
     end
   end
+  def add_attendees
+    @meeting_type = MeetingType.find(params[:id])
+    @all_attendees = Attendee.get_all_attendees.collect{|a| [a.name,a.id]}
+    logger.info"++++++++++++++++++++#{params.inspect}"
+    logger.info"++++1111111++++++++++++++++#{params[:attendee_id].inspect}"
+
+    respond_to do |format|
+      format.html
+    end
+  end
+  #    @att = Attendee.find(params[:attendee_id].to_i)
+  #    unless @att.blank?
+  #      @meeting_type = MeetingType.find(params[:meeting_type_id].to_i)
+  #      @meeting_type.attendees << @att unless @meeting_type.attendees.include?(@att)
+  #      flash[:notice] = 'attendee has been added to meeting type.'
+  #      redirect_to(@meeting_type) if @att.save
+  #    end
+ 
+  def update_added_attendees
+    p '@' * 10
+    p params
+    p '@' * 10
+    respond_to do |format|
+      format.html
+
+    end
+  end
 end

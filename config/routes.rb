@@ -5,7 +5,14 @@ AgileMeetings::Application.routes.draw do
 
   resources :technologies
 
-  resources :meeting_types 
+  resources :meeting_types do
+    member do
+      get 'add_attendees'
+      post 'update_added_attendees'
+    end
+  end
+    
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
