@@ -7,7 +7,7 @@
   </p>
   <p>
     Select Attendees: <br />
-    <%= select_tag 'attendees', options_for_select(@all_attendees) %>
+    <%= select_tag 'attendees', options_for_select(@all_attendees), :multiple => true %>
   </p>
   <p>
     <%= submit_tag 'Submit' %>

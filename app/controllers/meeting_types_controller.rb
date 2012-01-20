@@ -91,11 +91,21 @@ class MeetingTypesController < ApplicationController
   def update_added_attendees
     attendees = Attendee.find(params[:attendees])
     meeting_type = MeetingType.find(params[:id])
-    if meeting_type.attendees.include?(attendees)
-      flash[:notice] = 'Attendee already belongs to this meeting type.'
-    else
-      meeting_type.attendees << attendees
-      flash[:notice] = 'Attendee has been added to meeting type.'
+    existing_attendees = []
+    attendees.each do |attendee|
+      if meeting_type.attendees.include?(attendee)
+        existing_attendees << Attendee.find(attendee.id).name
+      else
+        meeting_type.attendees << attendee
+      end
+    end
+    if attendees.size == existing_attendees.size
+      flash[:notice] = "Attendee(s) already exists."
+    else if existing_attendees.empty?
+        flash[:notice] = "Attendee(s) added succesfully."
+      else
+        flash[:notice] = "The attendee(s) has been added except #{existing_attendees.join(',')}."
+      end
     end
     redirect_to meeting_type_url
   end
