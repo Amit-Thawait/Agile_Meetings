@@ -1,12 +1,12 @@
 <%= form_for(@meeting_type) do |f| %>
   <% if @meeting_type.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@meeting_type.errors.count, "error") %> prohibited this meeting_type from being saved:</h2>
+      <h2><%= pluralize(@meeting_type.errors.count, "error") %> prohibited this Meeting type from being saved:</h2>
 
       <ul>
-      <% @meeting_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @meeting_type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

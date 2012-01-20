@@ -74,12 +74,12 @@ class MeetingTypesController < ApplicationController
   def destroy
     @meeting_type = MeetingType.find(params[:id])
     @meeting_type.destroy
-
     respond_to do |format|
       format.html { redirect_to meeting_types_url }
       format.json { head :ok }
     end
   end
+
   def add_attendees
     @meeting_type = MeetingType.find(params[:id])
     @all_attendees = Attendee.get_all_attendees.collect{|a| [a.name,a.id]}
