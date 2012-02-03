@@ -7,6 +7,7 @@
     <th>Meeting Date</th>
     <th>Start time</th>
     <th>End time</th>
+    <th>Number of Attendee(s)</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,9 +17,10 @@
     <tr>
       <td><%= meeting.name %></td>
       <td><%= meeting.meeting_type.name %></td>
-      <td><%= meeting.meeting_date %></td>
-      <td><%= meeting.start_time %></td>
-      <td><%= meeting.end_time %></td>
+      <td><%= meeting.meeting_date %> </td>
+      <td><%= meeting.start_time.strftime("%I:%M%p")  %></td>
+      <td><%= meeting.end_time.strftime("%I:%M%p") %></td>
+      <td><%= link_to meeting.meeting_type.attendees.count ,num_of_attendees_meetings_url(:type => meeting.meeting_type.id) %></td>
       <td><%= link_to 'Show', meeting %></td>
       <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
       <td><%= link_to 'Destroy', meeting, :confirm => 'Are you sure?', :method => :delete %></td>

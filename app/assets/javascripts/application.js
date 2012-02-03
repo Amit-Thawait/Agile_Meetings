@@ -7,3 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery-ui
+//= require jquery-ui-timepicker-addon
+$(function (){
+    $('#meeting_meeting_date').datepicker({
+        dateFormat: 'dd-mm-yy'
+    });
+    $('#meeting_start_time').timepicker();
+    $('#meeting_end_time').timepicker();
+});

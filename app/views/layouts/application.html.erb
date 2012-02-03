@@ -1,27 +1,20 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby Sync Up</title>
-    <%= stylesheet_link_tag 'style' %>
-    <%= javascript_include_tag 'application' %>
+    <title>AgileMeetings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%= stylesheet_link_tag "jquery-ui-1.8.17.custom", "application" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <!DOCTYPE HTML>
-  <div id="main">
-    <%= render :partial=>'layouts/header' %>
-    <div id="site_content">
-      <div id="user_nav">
-      </div>
-
-      <div id="content">
-        <!-- insert the page content here -->
+    <div id="main">
+      <%= render 'layouts/header' %>
+      <div id="site_content">
         <p class="notice"><%= notice %></p>
         <p class="alert" ><%=alert %></p>
         <%= yield %>
       </div>
+      <%= render 'layouts/footer' %>
     </div>
-    <%= render :partial=>'layouts/footer' %>
-  </div>
-</body>
+  </body>
 </html>

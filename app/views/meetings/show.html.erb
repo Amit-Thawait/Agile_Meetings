@@ -17,12 +17,12 @@
 
 <p>
   <b>Start time:</b>
-  <%= @meeting.start_time %>
+  <%= @meeting.start_time.strftime("%I:%M%p") %>
 </p>
 
 <p>
   <b>End time:</b>
-  <%= @meeting.end_time %>
+  <%= @meeting.end_time.strftime("%I:%M%p") %>
 </p>
 
 

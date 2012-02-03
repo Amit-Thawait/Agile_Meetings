@@ -9,15 +9,15 @@
     <th></th>
   </tr>
 
-<% @attendees.each do |attendee| %>
-  <tr>
-    <td><%= attendee.name %></td>
-    <td><%= attendee.email %></td>
-    <td><%= link_to 'Show', attendee %></td>
-    <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
-    <td><%= link_to 'Destroy', attendee, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @attendees.each do |attendee| %>
+    <tr>
+      <td><%= attendee.name %></td>
+      <td><%= attendee.email %></td>
+      <td><%= link_to 'Show', attendee %></td>
+      <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
+      <td><%= link_to 'Destroy', attendee, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />

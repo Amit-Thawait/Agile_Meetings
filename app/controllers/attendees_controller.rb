@@ -1,4 +1,5 @@
 class AttendeesController < ApplicationController
+  #autocomplete :attendee,:name
   # GET /attendees
   # GET /attendees.json
   def index

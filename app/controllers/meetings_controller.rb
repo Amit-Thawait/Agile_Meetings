@@ -9,7 +9,12 @@ class MeetingsController < ApplicationController
       format.json { render :json => @meetings }
     end
   end
-
+  
+  def num_of_attendees
+    result = {}
+    @meeting_type = MeetingType.find(params[:type])
+    @attendees = @meeting_type.attendees
+  end
   # GET /meetings/1
   # GET /meetings/1.json
   def show

@@ -1,5 +1,6 @@
 class MeetingTypesController < ApplicationController
-  # GET /meeting_types
+  #  autocomplete :attendee , :name
+
   # GET /meeting_types.json
   def index
     @meeting_types = MeetingType.all
@@ -108,6 +109,30 @@ class MeetingTypesController < ApplicationController
       end
     end
     redirect_to meeting_type_url
+  end
+
+  def delete_attendee
+    attendee = Attendee.find(params[:attendee_id])
+    meeting_type = MeetingType.find(params[:id])
+    meeting_type.attendees.delete(attendee)
+    flash[:notice] = 'Attendee has been deleted from meeting type.'
+    redirect_to meeting_type_url
+  end
+
+  def num_of_attendees
+    result = {}
+    @meeting = MeetingType.find(params[:meeting_type_id])
+    @attendees = @meeting.attendees
+  end
+
+  def destroy
+    @meeting_type = MeetingType.find(params[:id])
+    @meeting_type.destroy
+
+    respond_to do |format|
+      format.html { redirect_to meeting_types_url }
+      format.json { head :ok }
+    end
   end
 end
 

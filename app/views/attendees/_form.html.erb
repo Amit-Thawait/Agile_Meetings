@@ -2,11 +2,10 @@
   <% if @attendee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
-
       <ul>
-      <% @attendee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @attendee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

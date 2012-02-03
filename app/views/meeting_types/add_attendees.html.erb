@@ -1,18 +1,10 @@
 <h1>Add Attendees</h1>
-
 <%= form_tag(update_added_attendees_meeting_type_url(@meeting_type.id),:method=>'post') do %>
   <p>
     <b>Meeting Type:</b>
     <%= @meeting_type.name %>
   </p>
-  <p>
-    Select Attendees: <br />
-    <%= select_tag 'attendees', options_for_select(@all_attendees), :multiple => true %>
-  </p>
-  <p>
-    <%= submit_tag 'Submit' %>
-  </p>
-
+  <%= select_tag 'attendees', options_for_select(@all_attendees), :multiple => true %>
+  <br/>
+  <%= submit_tag 'Submit' %>
 <% end %>
-
-

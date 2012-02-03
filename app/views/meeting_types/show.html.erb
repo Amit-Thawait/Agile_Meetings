@@ -1,12 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @meeting_type.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_meeting_type_path(@meeting_type) %> |
-<%= link_to 'Back', meeting_types_path %>
-
-<%= link_to 'Add Attendees', :controller => 'meeting_types', :action => 'add_attendees' %>
+<%= form_tag(update_added_attendees_meeting_type_url(@meeting_type.id),:method=>'post') do %>
+  <p id="notice"><%= notice %></p>
+  <p>
+    <b>Name:</b>
+    <%= @meeting_type.name %>
+  </p>
+  <p>
+    <b>Number of Attendee(s) :</b> &nbsp;
+    <%= link_to @meeting_type.attendees.count , {:controller => "meeting_types",:action => "num_of_attendees",:meeting_type_id =>@meeting_type.id} %>
+  </p>
+  <%= link_to 'Edit', edit_meeting_type_path(@meeting_type) %> &nbsp;
+  <%= link_to 'Back', meeting_types_path %> &nbsp;
+  <%= link_to 'Add Attendees', :controller => 'meeting_types', :action => 'add_attendees' %>
+<% end %>

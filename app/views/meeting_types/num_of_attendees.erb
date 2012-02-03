@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h2> Attendee(s) Name :</h2>
+<table>
+  <% @attendees.each do |a| %>
+    <tr>
+      <td><%= a.name %></td>
+      <td><%= link_to 'Delete Attendee' , {:controller => "meeting_types", :action => "delete_attendee" ,:attendee_id =>a.id}%></td>
+    </tr>
+  <% end %>
+</table>
+<p>
+  <%= link_to 'Back',meeting_type_path %>
+</p>
+

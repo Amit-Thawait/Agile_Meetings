@@ -1,0 +1,3 @@
+<%= form_for @attendees do |f| %>
+  <%=  f.autocomplete_field :attendee, autocomplete_attendee_name_meeting_types_path %>
+<% end %>
