@@ -1,10 +1,26 @@
 <h1>Add Attendees</h1>
-<%= form_tag(update_added_attendees_meeting_type_url(@meeting_type.id),:method=>'post') do %>
+<%#= form_tag(update_added_attendees_meeting_type_url(@meeting_type.id),:method=>'post') do %>
+<%=  form_tag('update_added_attendees') do  %>
   <p>
     <b>Meeting Type:</b>
     <%= @meeting_type.name %>
   </p>
-  <%= select_tag 'attendees', options_for_select(@all_attendees), :multiple => true %>
-  <br/>
-  <%= submit_tag 'Submit' %>
+  <p>
+    <b>Attendee Name:</b>
+    <%= text_field_tag :tags %>
+    <%= submit_tag 'Submit' %>
+  </p>
+  <p><%= link_to 'Back' , meeting_type_path%> </p>
 <% end %>
+<script>
+  $(function() {
+    $("#tags").autocomplete({
+      source: '<%= attendees_path(:json) %>'
+    });
+  });
+  $("#submit_key").click(function(){
+    alert($("#tags").val());
+  });
+</script>
+
+

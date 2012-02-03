@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  #autocomplete :attendee,:name
+
   # GET /attendees
   # GET /attendees.json
   def index
@@ -7,7 +7,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @attendees }
+      format.json { render :json => @attendees.collect {|i| i.name} }
     end
   end
 
