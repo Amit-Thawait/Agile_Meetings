@@ -49,6 +49,7 @@ class MeetingsController < ApplicationController
     
     respond_to do |format|
       if @meeting.save
+        AttendeeMailer.send_email(@meeting).deliver
         format.html { redirect_to @meeting, :notice => 'Meeting was successfully created.' }
         format.json { render :json => @meeting, :status => :created, :location => @meeting }
       else
@@ -85,4 +86,6 @@ class MeetingsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+
 end
