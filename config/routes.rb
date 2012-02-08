@@ -1,8 +1,5 @@
 AgileMeetings::Application.routes.draw do
   resources :attendees
-  #  resources :attendees do
-  #    get :autocomplete_attendee_name, :on => :collection
-  #  end
   resources :meetings do
     collection do
       get 'num_of_attendees'

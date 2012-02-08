@@ -41,5 +41,5 @@ AgileMeetings::Application.configure do
     :port => 25
   }
 
-  #config.assets.precompile += %w( jquery.js script.js style.css rails.js )
+  #config.assets.precompile += %w( jquery.js script.js style.css jquery-ui-1.8.17.custom.css application.css jquery.min.js jquery-ui.min.js application.js)
 end

@@ -20,6 +20,10 @@
     <%= f.select ('meeting_type_id',@all_meeting_types)%>
   </div>
   <div class="field">
+    <%= f.label :agenda %><br/>
+    <%= f.text_area :agenda, :rows => "3", :cols => "23" %>
+  </div>
+  <div class="field">
     <%= f.label :meeting_date %><br />
     <%= f.text_field :meeting_date %>
   </div>
