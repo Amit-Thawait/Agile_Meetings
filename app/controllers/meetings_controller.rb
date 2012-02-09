@@ -40,6 +40,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1/edit
   def edit
     @meeting = Meeting.find(params[:id])
+    @all_meeting_types = MeetingType.get_all_meeting_types.collect{|m| [m.name,m.id]}
   end
 
   # POST /meetings
@@ -86,6 +87,5 @@ class MeetingsController < ApplicationController
       format.json { head :ok }
     end
   end
-
 
 end
