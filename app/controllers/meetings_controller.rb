@@ -47,7 +47,7 @@ class MeetingsController < ApplicationController
   # POST /meetings.json
   def create
     @meeting = Meeting.new(params[:meeting])
-    
+    @all_meeting_types = MeetingType.get_all_meeting_types.collect{|m| [m.name,m.id]}
     respond_to do |format|
       if @meeting.save
         AttendeeMailer.send_email(@meeting).deliver
