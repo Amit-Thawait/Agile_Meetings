@@ -40,4 +40,4 @@ gem 'rcov'
 gem 'mocha'
 
 gem 'factory_girl'
-gem 'valid_attribute'
+#gem 'valid_attribute'
