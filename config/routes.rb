@@ -1,4 +1,6 @@
 AgileMeetings::Application.routes.draw do
+  devise_for :admins
+
   resources :attendees
   resources :meetings do
     collection do
