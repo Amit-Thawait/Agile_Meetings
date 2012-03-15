@@ -38,7 +38,7 @@ group :development, :test do
 end
 
 gem 'mysql'
-gem 'rcov'
+#gem 'rcov'
 gem 'mocha'
 
 gem 'factory_girl'
