@@ -100,7 +100,6 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2.2)
-    rcov (1.0.0)
     rdoc (3.11)
       json (~> 1.4)
     rspec (2.7.0)
@@ -155,7 +154,6 @@ DEPENDENCIES
   pg
   rails
   rails3-jquery-autocomplete
-  rcov
   rspec-rails
   sass-rails (~> 3.1.5)
   uglifier (>= 1.0.3)
