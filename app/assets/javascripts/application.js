@@ -15,4 +15,5 @@ $(function (){
     });
     $('#meeting_start_time').timepicker();
     $('#meeting_end_time').timepicker();
+    $("#myTable").tablesorter();
 });

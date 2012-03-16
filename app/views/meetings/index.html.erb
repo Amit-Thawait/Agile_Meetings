@@ -1,7 +1,8 @@
 <%= link_to 'Sign out', destroy_admin_session_path , :method => :delete %>
 <h1>Listing meetings</h1>
 
-<table>
+<table id="myTable" class="tablesorter">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Meeting Type</th>
@@ -13,7 +14,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
   <% @meetings.each do |meeting| %>
     <tr>
       <td><%= meeting.name %></td>
@@ -27,6 +29,7 @@
       <td><%= link_to 'Destroy', meeting, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <br />
