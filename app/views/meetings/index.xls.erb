@@ -1,0 +1,25 @@
+<table>
+   <tr>
+    <th>Name</th>
+    <th>Meeting Type</th>
+    <th>Meeting Date</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Number of Attendee(s)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+   <% @meetings.each do |meeting| %>
+    <tr>
+      <td><%= meeting.name %></td>
+      <td><%= meeting.meeting_type.name %></td>
+      <td><%= meeting.meeting_date %> </td>
+      <td><%= meeting.start_time.strftime("%I:%M%p")  %></td>
+      <td><%= meeting.end_time.strftime("%I:%M%p") %></td>
+      <td><%= link_to meeting.meeting_type.attendees.count ,num_of_attendees_meetings_url(:type => meeting.meeting_type.id) %></td>
+    </tr>
+  <% end %>
+</table>
+
+

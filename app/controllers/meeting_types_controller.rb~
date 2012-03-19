@@ -7,7 +7,6 @@ class MeetingTypesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xls
       format.json { render :json => @meeting_types }
     end
   end

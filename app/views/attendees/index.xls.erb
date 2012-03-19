@@ -1,0 +1,17 @@
+  <h1>Listing attendees</h1>
+
+  <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @attendees.each do |attendee| %>
+        <tr>
+          <td><%= attendee.name %></td>
+          <td><%= attendee.email %></td>
+        </tr>
+      <% end %>
+  </table>

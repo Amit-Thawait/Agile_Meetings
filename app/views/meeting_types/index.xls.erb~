@@ -1,0 +1,15 @@
+<h1>Listing Meeting types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @meeting_types.each do |meeting_type| %>
+    <tr>
+      <td><%= meeting_type.name %></td>
+    </tr>
+  <% end %>
+</table>
