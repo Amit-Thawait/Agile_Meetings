@@ -17,6 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :meeting_type %><br />
+ p "==================#{@all_meeting_types.inspect}"
     <%= f.select ('meeting_type_id', @all_meeting_types) %>
   </div>
   <div class="field">
