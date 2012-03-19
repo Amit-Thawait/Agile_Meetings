@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :meeting_type %><br />
-    <%= f.select :meeting_type_id, [1,2,3] %>
+    <%= f.select :meeting_type_id,@all_meeting_types %>
   </div>
   <div class="field">
     <%= f.label :agenda %><br/>
