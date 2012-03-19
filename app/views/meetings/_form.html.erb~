@@ -17,8 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :meeting_type %><br />
- <%logger.info "==================#{@all_meeting_types.inspect}" %>
-    <%= f.select ('meeting_type_id', @all_meeting_types) %>
+    <%= f.select ('meeting_type_id', [1,2,3]) %>
   </div>
   <div class="field">
     <%= f.label :agenda %><br/>
