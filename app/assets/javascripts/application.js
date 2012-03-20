@@ -15,5 +15,5 @@ $(function (){
     });
     $('#meeting_start_time').timepicker();
     $('#meeting_end_time').timepicker();
-    $("#myTable").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: jQuery(“#pager”)});
+    $("#myTable").tablesorter({widthFixed: true, widgets: ['zebra']}).tablesorterPager({container: jQuery("#pager")});
 });
