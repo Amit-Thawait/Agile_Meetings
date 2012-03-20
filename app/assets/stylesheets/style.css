@@ -207,7 +207,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   text-align: center; 
   background: #29425E url(../images/footer.png) repeat-x;
   color: #FFF;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 0.1em;}
 
 #footer a
